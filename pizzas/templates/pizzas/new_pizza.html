@@ -1,0 +1,16 @@
+{% extends 'pizzas/base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+
+<p>Add a new pizza:</p>
+
+<form action="{% url 'pizzas:new_pizza' %}" method='post' class='form'>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+      <button name="submit" class="btn btn-primary">add pizza</button>
+    {% endbuttons %}
+</form>
+
+{% endblock content %}
